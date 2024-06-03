@@ -1,0 +1,49 @@
+{
+  "name": "poldixd/laravel-service-worker",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/poldixd/laravel-service-worker",
+  "authors": [
+    {
+      "name": "Nils Poltmann",
+      "email": "dev@nils.li"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "illuminate/support": "^10.0|^11.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^8.0|^9.0",
+    "pestphp/pest": "^2.0",
+    "pestphp/pest-plugin-laravel": "^2.0",
+    "laravel/pint": "^1.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "poldixd\\ServiceWorker\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "poldixd\\ServiceWorker\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "poldixd\\ServiceWorker\\ServiceWorkerServiceProvider"
+      ]
+    }
+  },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  }
+}
