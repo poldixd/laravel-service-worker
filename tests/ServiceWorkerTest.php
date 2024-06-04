@@ -7,13 +7,13 @@ use function Pest\Laravel\get;
 beforeEach(fn () => Config::set('service-worker.service-worker-js-path', __DIR__.'/Fixtures/sw.js'));
 
 it('returns a status code 200 on the route', function () {
-    get(url('/service-worker.js'))
+    get(url('/build/service-worker.js'))
         ->assertSuccessful()
         ->assertSeeText("alert('Foo Bar');", false);
 });
 
 it('has the correct headers', function () {
-    get(url('/service-worker.js'))
+    get(url('/build/service-worker.js'))
         ->assertSuccessful()
         ->assertHeader('Content-Type', 'application/javascript')
         ->assertHeader('Service-Worker-Allowed', '/')
@@ -24,6 +24,6 @@ it('has the correct headers', function () {
 it('returns a 404 if js not found', function () {
     Config::set('service-worker.service-worker-js-path', __DIR__.'/Fixtures/missing.js');
 
-    get(url('/service-worker.js'))
+    get(url('/build/service-worker.js'))
         ->assertNotFound();
 });
