@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-service-worker` will be documented in this file
 
+## 0.3.1 - 2024-08-27
+
+- Bugfix
+
 ## 0.3.0 - 2024-08-27
 
 - Added `<x-service-worker-js />` Blade Component Helper

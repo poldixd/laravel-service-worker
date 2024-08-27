@@ -14,7 +14,7 @@ class ServiceWorkerJsComponent extends Component
         <script>
             if('serviceWorker' in navigator) {
                 window.addEventListener('load', () => {
-                    navigator.serviceWorker.register({{ route('service-worker-uri') }}, { scope: '/' })
+                    navigator.serviceWorker.register('{{ route('service-worker-uri') }}', { scope: '/' })
                 })
             }
         </script>
