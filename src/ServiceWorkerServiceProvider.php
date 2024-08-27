@@ -2,7 +2,9 @@
 
 namespace poldixd\ServiceWorker;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use poldixd\ServiceWorker\View\Components\ServiceWorkerJsComponent;
 
 class ServiceWorkerServiceProvider extends ServiceProvider
 {
@@ -14,5 +16,7 @@ class ServiceWorkerServiceProvider extends ServiceProvider
         );
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        Blade::component('service-worker-js', ServiceWorkerJsComponent::class);
     }
 }
