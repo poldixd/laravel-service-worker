@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-service-worker` will be documented in this file
 
+## 1.0.0 - 2025-02-04
+
+- Added Laravel 12 support
+- Removed Laravel 10 support
+
 ## 0.3.1 - 2024-08-27
 
 - Bugfix
